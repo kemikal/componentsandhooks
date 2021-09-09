@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Hello from './Hello';
+import Funktion from './Funktion';
+import Form from './Form';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  myCallback = (message) => {
+    console.log("Hello from callback: " + message);
+  }
+
+  render() {
+    return (
+      <div>
+          <h1>Hello APP</h1>
+          <Hello myCallback={this.myCallback}/>
+          <Funktion myCallback={this.myCallback}/>
+          <Form />
+      </div>
+    );
+  }
 }
 
 export default App;
